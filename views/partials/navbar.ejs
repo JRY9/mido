@@ -1,0 +1,32 @@
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Mido by JRY</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav me-auto">
+                <a href="/post" class="nav-link">Home</a>
+                <a href="/post/new" class="nav-link">Create Post</a>
+            </div>
+            <div class="navbar-nav">
+                <% if (!currentUser) { %>
+                <a href="/user/login" class="nav-link">Login</a>
+                <a href="/user/register" class="nav-link">Register</a>
+                <% } else { %>
+                <img class="profilePic rounded-circle" src="<%= currentUser.profilePicture.url %>" alt="..." crossorigin>
+                <a href="" class="nav-link"><%= currentUser.username %></a>
+                <a href="/user/logout" class="nav-link">Logout</a>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
+.profilePic {
+  width: 40px;
+  height: 40px;
+}
+</style>

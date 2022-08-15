@@ -1,0 +1,52 @@
+<% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="/css/login.css">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-auto my-auto pe-0">
+                            <a class="btn fa-solid fa-arrow-left" href="/post"></a>
+                        </div>
+                        <div class="col d-flex align-items-center">
+                            <h1 class="heading">Login</h1>
+                        </div>
+                    </div>                    
+                    <div class="row">
+                        <div class="col">
+                            <form action="/user/login" method="POST" class="needs-validation" novalidate>
+                                <div class="form-group mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Your username"
+                                        name="username" required />
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please input your username.
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password"
+                                        placeholder="Your password" name="password" required />
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please input your password.
+                                    </div>
+                                </div>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary">Login</button>
+                                    <hr>
+                                    <a href="/user/register" class="btn btn-success">Register</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

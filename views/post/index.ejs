@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="/css/index.css">
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="heading">Mido</h1>
+        <div class="d-grid mb-3">
+          <a href="/post/new" class="btn btn-primary">Create New Post</a>
+        </div>
+        <% for (let post of postData) { %>
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row mb-1">
+                  <div class="col-auto my-auto pe-0">
+                    <img class="profilePic rounded-circle d-inline" src="<%= post.author.profilePicture.url %>" alt="..." crossorigin>
+                  </div>
+                  <div class="col d-flex align-items-center">
+                    <h2 class="username"><%= post.author.username %></h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <a href="/post/<%= post._id %>" class="topic d-flex my-2"><%= post.topic %></a>
+                    <div class="d-flex">
+                      <a href="/post/<%= post._id %>" class="body"><%= post.body %></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
